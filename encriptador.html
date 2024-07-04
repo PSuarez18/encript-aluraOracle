@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge Encriptador</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="containerMain">
+      <div class="containerLeft">
+        <section>
+          <h2>Protege tu Mensaje: Encriptación Avanzada</h2>
+          <textarea
+            name="textareaInput"
+            id="textareaId"
+            placeholder="Ingresa el texto a desencriptar..."
+          ></textarea>
+          <p class="info-textarea">
+            Ingresa solo letras minúsculas, sin caracteres especiales ni
+            números. Otros tipos de entrada están deshabilitados.
+          </p>
+        </section>
+        <div class="container-buttons">
+          <button class="buttonsStyle" onclick="encrypt()">Encriptar</button>
+          <button class="buttonsStyle" onclick="ejecutadesencriptar()">
+            Desencriptar
+          </button>
+        </div>
+      </div>
+
+      <div class="containerRight">
+        <div class="info-section">
+          <img src="./encriptado.png" alt="Icono de candado" />
+          <p id="text-actual">
+            Esta herramienta te permite encriptar y desencriptar mensajes de
+            forma segura.
+          </p>
+          <div class="tooltip">
+            <img
+              src="copiar-el-simbolo-de-interfaz-de-dos-hojas-de-papel.png"
+              alt="Copiar texto"
+              onclick="copytextEncrypt()"
+            />
+            <span class="tooltiptext">Haz clic para copiar el texto</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="encrypt.js"></script>
+  </body>
+</html>
