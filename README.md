@@ -35,5 +35,5 @@ Este proyecto es una herramienta web diseñada para encriptar y desencriptar men
 
 Si deseas contribuir al desarrollo de este proyecto, ¡no dudes en enviar tus sugerencias o mejoras a través de issues o pull requests!
 
-(![image](https://github.com/PSuarez18/encript-aluraOracle/assets/127253030/7d08fafd-b898-4b85-91b4-7462b61a06c9)
-)
+![image](https://github.com/PSuarez18/encript-aluraOracle/assets/127253030/7d08fafd-b898-4b85-91b4-7462b61a06c9)
+
