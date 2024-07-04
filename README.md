@@ -37,3 +37,11 @@ Si deseas contribuir al desarrollo de este proyecto, ¡no dudes en enviar tus su
 
 ![image](https://github.com/PSuarez18/encript-aluraOracle/assets/127253030/7d08fafd-b898-4b85-91b4-7462b61a06c9)
 
+## Vista Tablet / Mobile
+![image](https://github.com/PSuarez18/encript-aluraOracle/assets/127253030/6666656a-e49a-41e5-bb84-a2a72530cce1)
+![image](https://github.com/PSuarez18/encript-aluraOracle/assets/127253030/06ddca02-556d-403c-987c-7009f0403f6d)
+
+
+
+
+
