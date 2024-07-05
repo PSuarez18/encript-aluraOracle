@@ -118,7 +118,6 @@ function validateTextarea() {
     var code = evento.keyCode || evento.which;
     if (code === 32 && evento.repeat) {
       evento.preventDefault();
-      console.log("Espacio repetido, prevenido.");
     }
   });
 
