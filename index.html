@@ -15,6 +15,7 @@
             name="textareaInput"
             id="textareaId"
             placeholder="Ingresa el texto a desencriptar..."
+            oninput="validateTextarea()"
           ></textarea>
           <p class="info-textarea">
             Ingresa solo letras minúsculas, sin caracteres especiales ni
@@ -29,7 +30,7 @@
         </div>
       </div>
 
-      <div class="containerRight">
+      <div class="containerRight" id="containerRight">
         <div class="info-section">
           <img src="src/assets/encriptado.png" alt="Icono de candado" />
           <p id="text-actual">
@@ -47,6 +48,8 @@
         </div>
       </div>
     </div>
+    <div class="copy-notification" id="copyNotification">Texto copiado al portapapeles</div>
+
     <script src="src/encrypt.js"></script>
   </body>
 </html>

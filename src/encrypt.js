@@ -1,11 +1,14 @@
 //Funcion que suelta la logica
 function encrypt() {
   const valueTextarea = document.getElementById("textareaId").value;
-  console.log("Texto a encriptar:", valueTextarea);
 
   const encryptedText = replaceVocales(valueTextarea);
   displayEncryptedText(encryptedText);
-  logEncryptedText(encryptedText);
+
+  const containerRight = document.getElementById("containerRight");
+  containerRight.classList.remove("myAnim"); // Asegura que se reinicie la animación al hacer clic nuevamente
+  void containerRight.offsetWidth; // Trigger reflow para reiniciar la animación
+  containerRight.classList.add("myAnim"); // Agrega la clase de animación
 }
 
 document.addEventListener("keydown", function (event) {
@@ -14,6 +17,7 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+//Permite que no se introduzca caracteres especiales
 document
   .getElementById("textareaId")
   .addEventListener("input", function (event) {
@@ -31,7 +35,7 @@ document
 //Patron de codificacion y decodificacion
 const vocalesArray = {
   e: "enter",
-  i: "imea",
+  i: "imes",
   a: "ai",
   o: "ober",
   u: "ufat",
@@ -54,22 +58,30 @@ function replaceVocales(text) {
 //Pinta el texto en la Etiqueta P
 function displayEncryptedText(text) {
   const textActualElement = document.getElementById("text-actual");
+  if (text === "" || text === " ") {
+    textActualElement.textContent =
+      "Ningun mensaje fue encontrado, ingrese el texto que desees encriptar o desencriptar";
+    return;
+  }
   textActualElement.textContent = text;
-}
-
-function logEncryptedText(text) {
-  console.log("Texto encriptado:", text);
 }
 
 //Manejando la copia del texto con una promesa
 
 function copytextEncrypt() {
   const texto = document.getElementById("text-actual").innerText;
+  const copyNotification = document.getElementById("copyNotification");
 
   navigator.clipboard
     .writeText(texto)
     .then(() => {
-      alert("Texto copiado al portapapeles: " + texto);
+      // Mostrar la notificación de copia
+      copyNotification.style.display = "block";
+
+      // Ocultar la notificación después de 2 segundos
+      setTimeout(() => {
+        copyNotification.style.display = "none";
+      }, 3000);
     })
     .catch((err) => {
       console.error("Error al copiar el texto: ", err);
@@ -88,7 +100,30 @@ function desencript(text) {
 //Ejecutar Desencriptador
 function ejecutadesencriptar() {
   const valueTextarea = document.getElementById("textareaId").value;
-  console.log("Texto a deseencriptar:", valueTextarea);
+
   const textoDesencriptado = desencript(valueTextarea);
   displayEncryptedText(textoDesencriptado);
+
+  const containerRight = document.getElementById("containerRight");
+  containerRight.classList.remove("myAnim"); // Asegura que se reinicie la animación al hacer clic nuevamente
+  void containerRight.offsetWidth; // Trigger reflow para reiniciar la animación
+  containerRight.classList.add("myAnim"); // Agrega la clase de animación
+}
+
+//Previene que se repita y que se peque espacios en blanco
+function validateTextarea() {
+  const textareaDom = document.getElementById("textareaId");
+
+  textareaDom.addEventListener("keydown", (evento) => {
+    var code = evento.keyCode || evento.which;
+    if (code === 32 && evento.repeat) {
+      evento.preventDefault();
+      console.log("Espacio repetido, prevenido.");
+    }
+  });
+
+  textareaDom.addEventListener("input", (ev) => {
+    var text = textareaDom.value;
+    textareaDom.value = text.replace(/\s{2,}/g, " ");
+  });
 }
