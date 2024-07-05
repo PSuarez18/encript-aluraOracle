@@ -225,6 +225,14 @@ body {
   .containerRight {
     width: 90vw;
     margin: 20px 0px;
+    height: 68vh;
+  }
+  
+  .containerRight{
+    height: 50vh;
+  }
+  .info-section > img {
+    display: none;
   }
   .containerLeft > section > textarea,
   .info-textarea {
@@ -241,6 +249,11 @@ body {
     max-height: 150px;
     min-height: 140px;
   }
+  .container-buttons {
+    flex-grow: 0;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
 }
 
 @media screen and (max-width: 980px) and (min-width: 769px) {
@@ -250,10 +263,16 @@ body {
 }
 @media screen and (max-width: 376px) {
   .containerMain {
-    gap: 80px;
+    gap: 20px;
   }
   .containerLeft > section > h2 {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .containerLeft{
+    min-height: 80vh ;
   }
 }
 
